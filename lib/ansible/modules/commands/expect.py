@@ -68,6 +68,7 @@ notes:
   - The M(expect) module is designed for simple scenarios. For more complex
     needs, consider the use of expect code with the M(shell) or M(script)
     modules. (An example is part of the M(shell) module documentation)
+  - 
 author: "Matt Martz (@sivel)"
 '''
 
@@ -77,6 +78,8 @@ EXAMPLES = r'''
     command: passwd username
     responses:
       (?i)password: "MySekretPa$$word"
+  # you don’t want to show passwords in your logs
+  no_log: True
 
 - name: Generic question with multiple different responses
   expect:
